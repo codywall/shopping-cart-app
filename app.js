@@ -20,6 +20,3 @@
     })
     .catch((error) => console.log(error));
 })();
-
-const courses = document.querySelector("#courses-list"),
-  shoppingCartContent = document.querySelector("#cart-content tbody");

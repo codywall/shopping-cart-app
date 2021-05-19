@@ -3,24 +3,30 @@
 
 <head>
     <title>Shopping</title>
-    <meta name="description" content="This is the description" />
+    <meta name="description" content="Example shopping cart application" />
     <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
     <header class="main-header">
-        <nav class="nav main-nav">
-            <ul>
-                <li><a href="cart.html">CART</a></li>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__list-item">
+                    <a href="cart.html">View cart</a>
+                </li>
             </ul>
         </nav>
-        <h1 class="band-name band-name-large">Shopping</h1>
+        <h1 class="page-title">Shopping</h1>
     </header>
-    <section class="content-section container">
-        <h2 class="section-header">Results</h2>
+    <section class="content-section">
         <div class="content-section__results" id="results">
         </div>
     </section>
+
+    <aside class="cart">
+
+    </aside>
+
     <script src="/app.js"></script>
 </body>
 
