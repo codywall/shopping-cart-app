@@ -1,12 +1,12 @@
-// Fetch products and populate page with them
-fetch("./product-list.json")
-  .then((response) => response.json())
-  .then((data) => {
-    let items = data.List;
-    let resultsWrapper = document.querySelector("#results");
-    console.log(items);
-    for (i = 0; i < items.length; i++) {
-      resultsWrapper.innerHTML += `<div class="product__card">
+// Fetch products and populate the home page with them
+(function () {
+  fetch("./product-list.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let items = data.List;
+      let resultsWrapper = document.querySelector("#results");
+      for (i = 0; i < items.length; i++) {
+        resultsWrapper.innerHTML += `<div class="product__card">
         <a href=${items[i].productUrl} class="product__image-link">
         <img src=${items[i].mediumImageURL} alt="" class="product__thumbnail" />
         </a>
@@ -16,6 +16,10 @@ fetch("./product-list.json")
         </h3>
         <h4 class="product__price">${items[i].price.toFixed(2)}</h4>
         </div>`;
-    }
-  })
-  .catch((error) => console.log(error));
+      }
+    })
+    .catch((error) => console.log(error));
+})();
+
+const courses = document.querySelector("#courses-list"),
+  shoppingCartContent = document.querySelector("#cart-content tbody");
