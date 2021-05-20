@@ -12,19 +12,19 @@
       // Add products to page
       for (let i = 0; i < items.length; i++) {
         resultsWrapper.innerHTML += `<div class="product__card">
-        <div class="product__thumbnail-wrapper">
         <a href=${items[i].productUrl}>
+        <div class="product__thumbnail-wrapper">
         <img src=${
           items[i].mediumImageURL
         } alt="" class="product__thumbnail-img" />
-        </a>
         </div>
+        </a>
         <div class="product__info-wrapper">
         <h3 class="product__name">
         <a href=${items[i].productUrl} class="product__name-link">
         ${items[i].caption}</a>
         </h3>
-        <h4 class="product__price">${items[i].price.toFixed(2)}</h4>
+        <h4 class="product__price">$${items[i].price.toFixed(2)}</h4>
         <button class="btn product__add-button">Add to cart</button>
         </div>
         </div>`;
