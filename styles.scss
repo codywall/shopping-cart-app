@@ -1,6 +1,6 @@
 html {
     font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 body {
@@ -107,17 +107,24 @@ body {
             .product__name {
                 margin: 0 0 0.5rem 0;
                 line-height: 1.25rem;
+                font-weight: 700;
+                font-size: 1.1rem;
+
+                .product__name-link {
+                    text-decoration: none;
+                    color: black;
+                }
             }
 
-            .product__name-link {
-                text-decoration: none;
-                color: black;
-                font-weight: 700;
+            .product__brand {
+                font-weight: 300;
                 font-size: 0.8rem;
+                margin: 0.2rem;
             }
 
             .product__price {
                 font-weight: 500;
+                font-size: 1rem;
                 margin: 0.5rem 0;
             }
 

@@ -1,6 +1,6 @@
 html {
   font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 body {
@@ -142,17 +142,24 @@ body {
 .content-section .product__card .product__info-wrapper .product__name {
   margin: 0 0 0.5rem 0;
   line-height: 1.25rem;
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
-.content-section .product__card .product__info-wrapper .product__name-link {
+.content-section .product__card .product__info-wrapper .product__name .product__name-link {
   text-decoration: none;
   color: black;
-  font-weight: 700;
+}
+
+.content-section .product__card .product__info-wrapper .product__brand {
+  font-weight: 300;
   font-size: 0.8rem;
+  margin: 0.2rem;
 }
 
 .content-section .product__card .product__info-wrapper .product__price {
   font-weight: 500;
+  font-size: 1rem;
   margin: 0.5rem 0;
 }
 
