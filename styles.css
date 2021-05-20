@@ -8,8 +8,9 @@ body {
   margin: 0;
 }
 
-/* Buttons */
+/* Global Styles */
 .btn {
+  cursor: pointer;
   padding: 0.5rem 0.75rem;
   font-weight: 600;
   background: none;
@@ -47,6 +48,15 @@ body {
   height: 7%;
 }
 
+.header .header__filter-btn {
+  all: unset;
+  width: 1.5rem;
+}
+
+.header .header__filter-btn img {
+  width: 1.5rem;
+}
+
 .content-section {
   padding: 3vw;
   /* product cards */
@@ -65,6 +75,9 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .content-section .content-section__toolbar .filter-button {
@@ -117,6 +130,7 @@ body {
   -o-object-position: center;
      object-position: center;
   max-height: 120px;
+  padding: 5px;
 }
 
 .content-section .product__card .product__info-wrapper {
@@ -140,5 +154,9 @@ body {
 .content-section .product__card .product__info-wrapper .product__price {
   font-weight: 500;
   margin: 0.5rem 0;
+}
+
+.content-section .product__card .product__info-wrapper .product__add-button {
+  width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */

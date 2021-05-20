@@ -8,8 +8,9 @@ body {
     margin: 0;
 }
 
-/* Buttons */
+/* Global Styles */
 .btn {
+    cursor: pointer;
     padding: 0.5rem 0.75rem;
     font-weight: 600;
     background: none;
@@ -38,6 +39,15 @@ body {
         width: 7%;
         height: 7%;
     }
+
+    .header__filter-btn {
+        all: unset;
+        width: 1.5rem;
+
+        img {
+            width: 1.5rem;
+        }
+    }
 }
 
 .content-section {
@@ -48,6 +58,7 @@ body {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
 
         .filter-button {
             max-height: 2.5rem;
@@ -84,6 +95,7 @@ body {
                 object-fit: contain;
                 object-position: center;
                 max-height: 120px;
+                padding: 5px;
             }
         }
 
@@ -107,6 +119,10 @@ body {
             .product__price {
                 font-weight: 500;
                 margin: 0.5rem 0;
+            }
+
+            .product__add-button {
+                width: 100%;
             }
 
         }
