@@ -24,7 +24,8 @@
         <a href=${items[i].productUrl} class="product__name-link">
         ${items[i].caption}</a>
         </h3>
-        <h4 class="product__price">$${items[i].price.toFixed(2)}</h4>
+        <h4 class="product__brand">${items[i].brand}</h4>
+        <h5 class="product__price">$${items[i].price.toFixed(2)}</h5>
         <button class="btn product__add-button">Add to cart</button>
         </div>
         </div>`;
@@ -32,21 +33,36 @@
 
       //Attach click event listeners to each of the add buttons
       for (let i = 0; i < allAddButtons.length; i++) {
-        allAddButtons[i].addEventListener("click", addToCartClicked, false);
+        allAddButtons[i].addEventListener("click", handleAddToCartClick, false);
       }
     })
     .catch((error) => console.log(error));
 
-  function addToCartClicked(event) {
+  function handleAddToCartClick(event) {
     const button = event.target;
-    console.log(button);
-    const product = button.parentElement;
-    const title = product.getElementsByClassName("product__name")[0].innerText;
-    console.log(title);
+    const product = button.parentElement.parentElement;
+    const title =
+      product.getElementsByClassName("product__name-link")[0].innerText;
     const price = product.getElementsByClassName("product__price")[0].innerText;
-    const imageSrc =
-      product.getElementsByClassName("product__thumbnail")[0].src;
-    // addItemToCart(title, price, imageSrc);
+    const imageSource = product.getElementsByClassName(
+      "product__thumbnail-img"
+    )[0].src;
+    addItemToCart(title, price, imageSource);
     // updateCartTotal();
+  }
+
+  function addItemToCart(title, price, imageSource) {
+    console.log(title, price, imageSource);
+    const cartItemsWrapper = document.getElementById("cart");
+    let cartItem = document.createElement("div");
+    cartItem.innerHTML += `
+      <div class="cart__item">
+          <img class="cart__item-image" src="${imageSource}">
+          <h4 class="cart__item-title">${title}</h4>
+          <h5 class="cart__item-price">${price}</h5>
+          <input class="cart__item-quantity" type="number" value="1">
+          <button class="btn btn-danger" type="button">Remove</button>
+      </div>`;
+    cartItemsWrapper.appendChild(cartItem);
   }
 })();
