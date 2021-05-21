@@ -7,6 +7,7 @@
       const allAddButtons = document.getElementsByClassName(
         "product__add-button"
       );
+
       const resultsWrapper = document.querySelector("#results");
 
       // Add products to page
@@ -38,6 +39,10 @@
     })
     .catch((error) => console.log(error));
 
+  // Shopping cart logic
+  const cartItemsWrapper = document.getElementById("cart");
+  const cartItems = document.getElementsByClassName("cart__item");
+
   function handleAddToCartClick(event) {
     const button = event.target;
     const product = button.parentElement.parentElement;
@@ -48,21 +53,62 @@
       "product__thumbnail-img"
     )[0].src;
     addItemToCart(title, price, imageSource);
-    // updateCartTotal();
+    updateCartTotal();
   }
 
+  // Add and display items in cart
   function addItemToCart(title, price, imageSource) {
-    console.log(title, price, imageSource);
-    const cartItemsWrapper = document.getElementById("cart");
+    // Check to see if new item is already in cart
+    const cartItemTitles =
+      cartItemsWrapper.getElementsByClassName("cart__item-title");
+    const cartQuantityInputs = cartItemsWrapper.getElementsByClassName(
+      "cart__item-quantity"
+    );
+    for (var i = 0; i < cartItemTitles.length; i++) {
+      // If the item is already in the cart then update the item quantity
+      if (cartItemTitles[i].innerText == title) {
+        cartQuantityInputs[i].value = parseInt(cartQuantityInputs[i].value) + 1;
+        return;
+      }
+    }
+
+    // Create new cart item
     let cartItem = document.createElement("div");
+    cartItem.setAttribute("class", "cart__item");
     cartItem.innerHTML += `
-      <div class="cart__item">
           <img class="cart__item-image" src="${imageSource}">
           <h4 class="cart__item-title">${title}</h4>
           <h5 class="cart__item-price">${price}</h5>
           <input class="cart__item-quantity" type="number" value="1">
-          <button class="btn btn-danger" type="button">Remove</button>
-      </div>`;
+          <button class="btn btn-danger" type="button">Remove</button>`;
+    cartItem
+      .getElementsByClassName("cart__item-quantity")[0]
+      .addEventListener("change", quantityUpdated);
     cartItemsWrapper.appendChild(cartItem);
+  }
+
+  // Checks to make sure the quantity is valid and then updates total
+  function quantityUpdated(event) {
+    let input = event.target;
+    if (isNaN(input.value) || input.value < 1) {
+      input.value = 1;
+    }
+    updateCartTotal();
+  }
+
+  // Iterates through the items in the cart to update the total cost of items in cart
+  function updateCartTotal() {
+    let totalPrice = 0;
+    for (let i = 0; i < cartItems.length; i++) {
+      const priceString =
+        cartItems[i].getElementsByClassName("cart__item-price")[0].innerText;
+      const priceNum = parseFloat(priceString.substring(1));
+      const quantity = cartItems[i].getElementsByClassName(
+        "cart__item-quantity"
+      )[0].value;
+      totalPrice += priceNum * quantity;
+    }
+    console.log(totalPrice);
+    document.getElementById("total").innerText = "$" + totalPrice;
   }
 })();
