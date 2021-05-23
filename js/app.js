@@ -7,19 +7,18 @@
       const allAddButtons = document.getElementsByClassName(
         "product__add-button"
       );
-
       const resultsWrapper = document.querySelector("#results");
 
       // Add products to page
       for (let i = 0; i < items.length; i++) {
         resultsWrapper.innerHTML += `<div class="product__card">
-        <a href=${items[i].productUrl}>
         <div class="product__thumbnail-wrapper">
+        <a href=${items[i].productUrl}>
         <img src=${
           items[i].mediumImageURL
         } alt="" class="product__thumbnail-img" />
-        </div>
         </a>
+        </div>
         <div class="product__info-wrapper">
         <h3 class="product__name">
         <a href=${items[i].productUrl} class="product__name-link">
@@ -58,21 +57,21 @@
 
   // Add and display items in cart
   function addItemToCart(title, price, imageSource) {
-    // Check to see if new item is already in cart
     const cartItemTitles =
       cartItemsWrapper.getElementsByClassName("cart__item-title");
     const cartQuantityInputs = cartItemsWrapper.getElementsByClassName(
       "cart__item-quantity"
     );
+
+    // If the item is already in the cart then update the item quantity
     for (var i = 0; i < cartItemTitles.length; i++) {
-      // If the item is already in the cart then update the item quantity
       if (cartItemTitles[i].innerText == title) {
         cartQuantityInputs[i].value = parseInt(cartQuantityInputs[i].value) + 1;
         return;
       }
     }
 
-    // Create new cart item
+    // Else create new cart item
     let cartItem = document.createElement("div");
     cartItem.setAttribute("class", "cart__item");
     cartItem.innerHTML += `
@@ -80,15 +79,27 @@
           <h4 class="cart__item-title">${title}</h4>
           <h5 class="cart__item-price">${price}</h5>
           <input class="cart__item-quantity" type="number" value="1">
-          <button class="btn btn-danger" type="button">Remove</button>`;
+          <button class="cart__remove-btn btn btn-danger" type="button">Delete</button>`;
+
+    // Event listeners
     cartItem
       .getElementsByClassName("cart__item-quantity")[0]
-      .addEventListener("change", quantityUpdated);
+      .addEventListener("change", handleQuantityUpdated);
+    cartItem
+      .getElementsByClassName("cart__remove-btn")[0]
+      .addEventListener("click", removeCartItem, false);
+
     cartItemsWrapper.appendChild(cartItem);
   }
 
+  function removeCartItem(event) {
+    const itemToRemoveButton = event.target;
+    itemToRemoveButton.parentElement.remove();
+    updateCartTotal();
+  }
+
   // Checks to make sure the quantity is valid and then updates total
-  function quantityUpdated(event) {
+  function handleQuantityUpdated(event) {
     let input = event.target;
     if (isNaN(input.value) || input.value < 1) {
       input.value = 1;
@@ -108,7 +119,19 @@
       )[0].value;
       totalPrice += priceNum * quantity;
     }
-    console.log(totalPrice);
     document.getElementById("total").innerText = "$" + totalPrice;
+    updateCartQuantity();
+  }
+
+  function updateCartQuantity() {
+    const quantityCounter = document.getElementById("cart__quantity-counter");
+    const quantityValues = document.getElementsByClassName(
+      "cart__item-quantity"
+    );
+    let totalQuantity = 0;
+    for (let i = 0; i < quantityValues.length; i++) {
+      totalQuantity += parseInt(quantityValues[i].value);
+    }
+    quantityCounter.innerText = totalQuantity;
   }
 })();

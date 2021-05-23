@@ -1,6 +1,9 @@
+/* Variables */
 html {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -8,14 +11,21 @@ body {
   margin: 0;
 }
 
-/* Global Styles */
+/* Components */
 .btn {
-  cursor: pointer;
-  padding: 0.5rem 0.75rem;
-  font-weight: 600;
-  background: none;
-  border: 2px solid #152238;
-  color: #152238;
+  color: white;
+  background: #22aed1;
+  padding: 0.75rem;
+  border-radius: 19.5px;
+  border: none;
+  opacity: 0.96;
+  -webkit-box-shadow: 0px 5px 6px rgba(1, 111, 185, 0.14);
+          box-shadow: 0px 5px 6px rgba(1, 111, 185, 0.14);
+}
+
+.btn-danger {
+  color: red;
+  border: 2px solid red;
 }
 
 .header {
@@ -31,8 +41,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-          box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -40,7 +48,11 @@ body {
 }
 
 .header .header__title {
-  font-size: 1.25rem;
+  font-size: 1.95rem;
+  font-weight: 500;
+  font-family: 'SignPainter', sans-serif;
+  padding: 0;
+  margin: 1rem;
 }
 
 .header .header__cart-icon {
@@ -59,6 +71,7 @@ body {
 
 .content-section {
   padding: 3vw;
+  background-color: rgba(1, 111, 185, 0.1);
   /* product cards */
 }
 
@@ -78,24 +91,29 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 1rem;
 }
 
-.content-section .content-section__toolbar .filter-button {
-  max-height: 2.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.content-section .content-section__toolbar .content-section__result-info {
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 
-.content-section .content-section__toolbar .filter-button .filter-button__icon {
-  width: 0.7rem;
-  height: 0.7rem;
+.content-section .content-section__toolbar .sort-select__wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  padding: 0 1rem;
+  -webkit-box-shadow: 0, 5, 6, rgba(1, 111, 185, 0.1);
+          box-shadow: 0, 5, 6, rgba(1, 111, 185, 0.1);
+}
+
+.content-section .content-section__toolbar .sort-select__wrapper .sort-select__element {
+  width: 4.5rem;
+  height: 2.6rem;
+  font-size: 0.95rem;
+  border: 0px;
+  outline: none;
 }
 
 .content-section .product__card {
@@ -109,19 +127,16 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  padding: 1rem 0.5rem 1rem 0;
   margin: 1rem 0;
-  border-radius: 0.2rem;
+  border-radius: 30px;
   background: white;
-  -webkit-box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-          box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   overflow: hidden;
-  height: 30vh;
 }
 
 .content-section .product__card .product__thumbnail-wrapper {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
-  height: 100%;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
 }
 
 .content-section .product__card .product__thumbnail-wrapper .product__thumbnail-img {
@@ -129,38 +144,40 @@ body {
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
-  max-height: 120px;
-  padding: 5px;
+  width: 100%;
+  padding: 0.5rem;
 }
 
 .content-section .product__card .product__info-wrapper {
-  padding: 0.5rem;
-  -ms-flex-preferred-size: 70%;
-      flex-basis: 70%;
+  padding: 0 1.2rem;
+  -ms-flex-preferred-size: 65%;
+      flex-basis: 65%;
 }
 
 .content-section .product__card .product__info-wrapper .product__name {
   margin: 0 0 0.5rem 0;
   line-height: 1.25rem;
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .content-section .product__card .product__info-wrapper .product__name .product__name-link {
   text-decoration: none;
-  color: black;
+  color: #182825;
 }
 
 .content-section .product__card .product__info-wrapper .product__brand {
   font-weight: 300;
   font-size: 0.8rem;
   margin: 0.2rem;
+  color: #6D8EA0;
 }
 
 .content-section .product__card .product__info-wrapper .product__price {
   font-weight: 500;
   font-size: 1rem;
   margin: 0.5rem 0;
+  color: #016FB9;
 }
 
 .content-section .product__card .product__info-wrapper .product__add-button {

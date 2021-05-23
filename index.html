@@ -15,15 +15,24 @@
         <span class="header__menu-placeholder"></span>
         <h1 class="header__title">Lorem's Market</h1>
         <button class="header__filter-btn" id="filter">
-            <img src="images/icons/PngItem_5216062.png" alt="" class="header__cart-icon">
+            <span id="cart__quantity-counter"></span> <img src="images/icons/PngItem_5216062.png" alt=""
+                class="header__cart-icon">
         </button>
     </header>
     <section class="content-section">
         <div class="content-section__toolbar">
-            <h3>Results for <span class="search-term">Octopus</span></h3>
-            <button class="btn filter-button" id="filter" href="#">
-                <img class="filter-button__icon" src="images/icons/filter-icon-25207.png" />Filter
-            </button>
+            <h3 class="content-section__result-info">
+                <span id="content-section__result-count">**</span> results
+            </h3>
+            <div class="sort-select__wrapper">
+                <select class="sort-select__element">
+                    <option value="" selected disabled hidden>Sort by</option>
+                    <option value="price">Price</option>
+                    <option value="title">Product name A-Z</option>
+                    <option value="brand">Brand A-Z</option>
+                    <option value="availability">availability</option>
+                </select>
+            </div>
         </div>
         <div class=" content-section__results" id="results">
         </div>
