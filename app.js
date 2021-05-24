@@ -133,10 +133,12 @@
     let cartArray = storage;
 
     cartItemsWrapper.innerHTML = "";
-    cartArray.forEach(function (item, i) {
-      let cartItem = document.createElement("div");
-      cartItem.setAttribute("class", "cart__item");
-      cartItem.innerHTML += `
+    storage.length < 1
+      ? (cartItemsWrapper.innerHTML = "<h2>Your cart is empty.</h2>")
+      : cartArray.forEach(function (item, i) {
+          let cartItem = document.createElement("div");
+          cartItem.setAttribute("class", "cart__item");
+          cartItem.innerHTML += `
       <div class="product__thumbnail-wrapper">
         <img class="cart__item-image" src="${item.imageSource}" alt="thumbnail image">
       </div>
@@ -146,13 +148,13 @@
         <button class="cart__remove-btn btn btn-danger" type="button">Delete</button>
       </div>`;
 
-      cartItemsWrapper.appendChild(cartItem);
+          cartItemsWrapper.appendChild(cartItem);
 
-      // Attach event listeners
-      document
-        .getElementsByClassName("cart__remove-btn")
-        [i].addEventListener("click", removeCartItem);
-    });
+          // Attach event listeners
+          document
+            .getElementsByClassName("cart__remove-btn")
+            [i].addEventListener("click", removeCartItem);
+        });
 
     updateCartTotal();
   }
