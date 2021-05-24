@@ -27,8 +27,8 @@
                 <span id="number-results"></span> results
             </h3>
             <div class="sort-select__wrapper">
-                <select class="sort-select__element">
-                    <option value="" selected disabled hidden>Sort by</option>
+                <select class="sort-select__element" id="select">
+                    <option value="" onchange="sortItems()" selected disabled hidden>Sort by</option>
                     <option value="price">Price</option>
                     <option value="title">Name</option>
                     <option value="brand">Brand A-Z</option>
