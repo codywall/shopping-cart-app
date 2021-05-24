@@ -29,6 +29,8 @@ I wanted to use vanilla Javascript because after ~2 years of using React, I felt
 
 ## Takeaways
 
-I got hung up on adding a lot of functionality to the shopping cart which wasn't necessary according to the requirements, but those were problems I enjoyed solving so it was worth it to me. I refactored the cart to use localStorage instead of just outputting the cart items straight into a div so I could have a separate cart page. However, changing it in this way meant that many of my original cart functions were broken, and I had to put in extra time fixing those. Creating the counter which displays how many items are in the cart was pretty cool. 
+I got hung up on adding a lot of functionality to the shopping cart which wasn't necessary according to the requirements, but those were problems I enjoyed solving so it was worth it to me. I refactored the cart to use localStorage instead of just outputting the cart items straight into a div so I could have a separate cart page. However, changing it in this way meant that many of my original cart functions were broken, and I had to put in extra time fixing those. 
+
+Creating the counter which displays how many items are in the cart was pretty cool. One feature I had to trash in the interest of time when I switched to localstorage was preventing duplicate items from being added to the cart and instead incrementing the quantity counter. 
 
 If I had more time to work on this project, I would add animations to add more visual interest. I would also take a broader look at the overall usage of files and scripts, and try to arrange my Javascript files in a more structured way.
