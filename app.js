@@ -66,6 +66,9 @@
         </h3>
         <h4 class="product__brand">${items[i].brand}</h4>
         <h5 class="product__price">$${items[i].price.toFixed(2)}</h5>
+        <span id="product__stock">${
+          items[i].isAvailable ? "" : "Out of stock"
+        }</span>
         <button class="btn product__add-button">Add to cart</button>
         </div>
         </div>`;
