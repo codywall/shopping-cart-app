@@ -31,6 +31,7 @@ body {
 .btn-danger {
     color: red;
     border: 2px solid red;
+    background: none;
 }
 
 
@@ -47,6 +48,10 @@ body {
     top: 0;
     z-index: 99999;
 
+    .header__menu-placeholder {
+        width: 15%;
+    }
+
     .header__title {
         font-size: 1.95rem;
         font-weight: 500;
@@ -55,16 +60,25 @@ body {
         margin: 1rem;
     }
 
-    .header__cart-icon {
-        width: 7%;
-        height: 7%;
-    }
+    .header__cart-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 15%;
 
-    .header__filter-btn {
-        all: unset;
-        width: 1.5rem;
+        .header__cart-counter {
+            background: $blue-text-color;
+            border-radius: 50%;
+            display: block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            color: white;
+            font-size: .75rem;
+            text-align: center;
+        }
 
-        img {
+        .header__cart-icon {
             width: 1.5rem;
         }
     }
@@ -96,7 +110,7 @@ body {
             box-shadow: 0, 5, 6, rgba(1, 111, 185, 0.1);
 
             .sort-select__element {
-                width: 4.5rem;
+                min-width: 4.5rem;
                 height: 2.6rem;
                 font-size: 0.95rem;
                 border: 0px;

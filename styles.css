@@ -26,6 +26,7 @@ body {
 .btn-danger {
   color: red;
   border: 2px solid red;
+  background: none;
 }
 
 .header {
@@ -47,6 +48,10 @@ body {
   z-index: 99999;
 }
 
+.header .header__menu-placeholder {
+  width: 15%;
+}
+
 .header .header__title {
   font-size: 1.95rem;
   font-weight: 500;
@@ -55,17 +60,33 @@ body {
   margin: 1rem;
 }
 
-.header .header__cart-icon {
-  width: 7%;
-  height: 7%;
+.header .header__cart-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 15%;
 }
 
-.header .header__filter-btn {
-  all: unset;
-  width: 1.5rem;
+.header .header__cart-info .header__cart-counter {
+  background: #016FB9;
+  border-radius: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  color: white;
+  font-size: .75rem;
+  text-align: center;
 }
 
-.header .header__filter-btn img {
+.header .header__cart-info .header__cart-icon {
   width: 1.5rem;
 }
 
@@ -109,7 +130,7 @@ body {
 }
 
 .content-section .content-section__toolbar .sort-select__wrapper .sort-select__element {
-  width: 4.5rem;
+  min-width: 4.5rem;
   height: 2.6rem;
   font-size: 0.95rem;
   border: 0px;

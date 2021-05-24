@@ -9,6 +9,9 @@
       );
       const resultsWrapper = document.querySelector("#results");
 
+      // Dynamically set number of search results
+      document.getElementById("number-results").innerText = items.length;
+
       // Add products to page
       for (let i = 0; i < items.length; i++) {
         resultsWrapper.innerHTML += `<div class="product__card">
@@ -124,7 +127,7 @@
   }
 
   function updateCartQuantity() {
-    const quantityCounter = document.getElementById("cart__quantity-counter");
+    const quantityCounter = document.getElementById("cart-counter");
     const quantityValues = document.getElementsByClassName(
       "cart__item-quantity"
     );
@@ -133,5 +136,10 @@
       totalQuantity += parseInt(quantityValues[i].value);
     }
     quantityCounter.innerText = totalQuantity;
+    if (totalQuantity > 0) {
+      document
+        .getElementById("cart-counter")
+        .classList.add("header__cart-counter");
+    }
   }
 })();

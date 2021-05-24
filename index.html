@@ -14,23 +14,23 @@
     <header class="header">
         <span class="header__menu-placeholder"></span>
         <h1 class="header__title">Lorem's Market</h1>
-        <button class="header__filter-btn" id="filter">
-            <span id="cart__quantity-counter"></span> <img src="images/icons/PngItem_5216062.png" alt=""
-                class="header__cart-icon">
-        </button>
+        <div class="header__cart-info" id="cart-info">
+            <span id="cart-counter"></span>
+            <img src="images/icons/PngItem_5216062.png" alt="" class="header__cart-icon">
+        </div>
     </header>
     <section class="content-section">
         <div class="content-section__toolbar">
             <h3 class="content-section__result-info">
-                <span id="content-section__result-count">**</span> results
+                <span id="number-results">**</span> results
             </h3>
             <div class="sort-select__wrapper">
                 <select class="sort-select__element">
                     <option value="" selected disabled hidden>Sort by</option>
                     <option value="price">Price</option>
-                    <option value="title">Product name A-Z</option>
+                    <option value="title">Name</option>
                     <option value="brand">Brand A-Z</option>
-                    <option value="availability">availability</option>
+                    <option value="availability">Availability</option>
                 </select>
             </div>
         </div>
