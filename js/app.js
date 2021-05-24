@@ -1,4 +1,4 @@
-(function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Fetch products and build product listings with them
   const resultsWrapper = document.querySelector("#results");
   if (resultsWrapper) {

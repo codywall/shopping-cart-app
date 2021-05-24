@@ -88,6 +88,10 @@ body {
   color: white;
   font-size: .75rem;
   text-align: center;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
 }
 
 .header .header__cart-info .header__cart-icon {
