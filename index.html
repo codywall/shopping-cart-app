@@ -16,13 +16,15 @@
         <h1 class="header__title">Lorem's Market</h1>
         <div class="header__cart-info" id="cart-info">
             <span id="cart-counter"></span>
-            <img src="images/icons/PngItem_5216062.png" alt="" class="header__cart-icon">
+            <a href="/cart.html">
+                <img src="images/icons/PngItem_5216062.png" alt="" class="header__cart-icon" />
+            </a>
         </div>
     </header>
     <section class="content-section">
         <div class="content-section__toolbar">
             <h3 class="content-section__result-info">
-                <span id="number-results">**</span> results
+                <span id="number-results"></span> results
             </h3>
             <div class="sort-select__wrapper">
                 <select class="sort-select__element">
@@ -37,10 +39,6 @@
         <div class=" content-section__results" id="results">
         </div>
     </section>
-
-    <aside class="cart" id="cart">
-        <p class="cart__total" id="total"></p>
-    </aside>
 
     <script src="/js/app.js"></script>
 </body>

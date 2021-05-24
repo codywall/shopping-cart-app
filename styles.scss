@@ -50,6 +50,10 @@ body {
 
     .header__menu-placeholder {
         width: 15%;
+
+        .header__back-icon {
+            width: 1rem;
+        }
     }
 
     .header__title {
@@ -87,6 +91,12 @@ body {
 .content-section {
     padding: 3vw;
     background-color: rgba(1, 111, 185, 0.1);
+
+    .content-section__cart {
+        background: white;
+        margin: 0;
+        border-radius: 30px;
+    }
 
     .content-section__toolbar {
         display: flex;

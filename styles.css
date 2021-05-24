@@ -52,6 +52,10 @@ body {
   width: 15%;
 }
 
+.header .header__menu-placeholder .header__back-icon {
+  width: 1rem;
+}
+
 .header .header__title {
   font-size: 1.95rem;
   font-weight: 500;
@@ -94,6 +98,12 @@ body {
   padding: 3vw;
   background-color: rgba(1, 111, 185, 0.1);
   /* product cards */
+}
+
+.content-section .content-section__cart {
+  background: white;
+  margin: 0;
+  border-radius: 30px;
 }
 
 .content-section .content-section__toolbar {
