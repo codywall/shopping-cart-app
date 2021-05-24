@@ -15,7 +15,9 @@
                 <img src="/shopping-cart-app/images/icons/back-arrow.png" class="header__back-icon" />
             </a>
         </span>
-        <h1 class="header__title">Lorem's Market</h1>
+        <h1 class="header__title">
+            <img src="/shopping-cart-app/images/icons/logo.png" alt="Lorem's Market">
+        </h1>
         <div class="header__cart-info" id="cart-info">
         </div>
     </header>
@@ -28,8 +30,8 @@
         <div class="content-section__cart" id="cart">
         </div>
         <div class="cart-checkout">
-            <h4>Subtotal $</h4><span id="total"></span>
-            <p>Shipping & taxes calculated at checkout</p>
+            <h4 class="cart-checkout__subtitle">Subtotal <span id="total"></span></h4>
+            <p class="cart-checkout__costs">Shipping & taxes calculated at checkout</p>
             <button id="checkout" class="btn">Checkout</button>
         </div>
     </section>

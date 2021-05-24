@@ -132,23 +132,21 @@
     }
     let cartArray = storage;
 
-    // TODO: Increment quantity rather than duplicate items within cart
     cartItemsWrapper.innerHTML = "";
     cartArray.forEach(function (item, i) {
       let cartItem = document.createElement("div");
       cartItem.setAttribute("class", "cart__item");
       cartItem.innerHTML += `
-      <img class="cart__item-image" src="${item.imageSource}">
+      <img class="cart__item-image" src="${item.imageSource}" alt="thumbnail image">
+      <div class="card__item-info">
       <h4 class="cart__item-title">${item.title}</h4>
       <h5 class="cart__item-price">${item.price}</h5>
-      <input class="cart__item-quantity" type="number" value="1">
-      <button class="cart__remove-btn btn btn-danger" type="button">Delete</button>`;
+      <button class="cart__remove-btn btn btn-danger" type="button">Delete</button>
+      </div>`;
+
       cartItemsWrapper.appendChild(cartItem);
 
       // Attach event listeners
-      document
-        .getElementsByClassName("cart__item-quantity")
-        [i].addEventListener("change", handleQuantityUpdated);
       document
         .getElementsByClassName("cart__remove-btn")
         [i].addEventListener("click", removeCartItem);
@@ -175,15 +173,6 @@
     populateCartPage();
   }
 
-  // Checks to make sure the quantity is valid and then updates total
-  function handleQuantityUpdated(event) {
-    let input = event.target;
-    if (isNaN(input.value) || input.value < 1) {
-      input.value = 1;
-    }
-    // updateCartTotal();
-  }
-
   // Iterates through the items in the cart to update the total cost of items in cart
   function updateCartTotal() {
     let items = JSON.parse(localStorage.getItem("cart"));
@@ -201,9 +190,6 @@
   function updateCartQuantity() {
     const quantityCounter = document.getElementById("cart-counter");
     quantityCounter.innerText = "";
-    const quantityValues = document.getElementsByClassName(
-      "cart__item-quantity"
-    );
     let storage = JSON.parse(localStorage.getItem("cart"));
     if (storage == null) {
       storage = [];
