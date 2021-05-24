@@ -3,7 +3,7 @@
 $primary-text-color: #182825;
 $blue-text-color: #016FB9;
 $teal-color: #22AED1;
-$grey-text-color: #6D8EA0;
+$grey-text-color: #526772;
 
 html {
     font-family: 'Open Sans', sans-serif;
@@ -19,7 +19,7 @@ body {
 /* Components */
 .btn {
     color: white;
-    background: #22aed1;
+    background: $blue-text-color;
     padding: 0.75rem;
     border-radius: 19.5px;
     border: none;

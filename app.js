@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
   // Fetch products and build product listings with them
   const resultsWrapper = document.querySelector("#results");
   if (resultsWrapper) {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href=${items[i].productUrl}>
         <img src=${
           items[i].mediumImageURL
-        } alt="" class="product__thumbnail-img" />
+        } alt="Item thumbnail image" class="product__thumbnail-img" />
         </a>
         </div>
         <div class="product__info-wrapper">

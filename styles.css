@@ -14,7 +14,7 @@ body {
 /* Components */
 .btn {
   color: white;
-  background: #22aed1;
+  background: #016FB9;
   padding: 0.75rem;
   border-radius: 19.5px;
   border: none;
@@ -206,7 +206,7 @@ body {
   font-weight: 300;
   font-size: 0.8rem;
   margin: 0.2rem;
-  color: #6D8EA0;
+  color: #526772;
 }
 
 .content-section .product__card .product__info-wrapper .product__price {
