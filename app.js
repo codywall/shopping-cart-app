@@ -222,6 +222,6 @@
   function checkout() {
     alert("Congratulation! You checked out.");
     localStorage.removeItem("cart");
-    window.location.href = "/";
+    window.location.href = "/shopping-cart-app";
   }
 })();
