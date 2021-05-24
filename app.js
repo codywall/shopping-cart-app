@@ -137,11 +137,13 @@
       let cartItem = document.createElement("div");
       cartItem.setAttribute("class", "cart__item");
       cartItem.innerHTML += `
-      <img class="cart__item-image" src="${item.imageSource}" alt="thumbnail image">
+      <div class="product__thumbnail-wrapper">
+        <img class="cart__item-image" src="${item.imageSource}" alt="thumbnail image">
+      </div>
       <div class="card__item-info">
-      <h4 class="cart__item-title">${item.title}</h4>
-      <h5 class="cart__item-price">${item.price}</h5>
-      <button class="cart__remove-btn btn btn-danger" type="button">Delete</button>
+        <h4 class="cart__item-title">${item.title}</h4>
+        <h5 class="cart__item-price">${item.price}</h5>
+        <button class="cart__remove-btn btn btn-danger" type="button">Delete</button>
       </div>`;
 
       cartItemsWrapper.appendChild(cartItem);
