@@ -191,7 +191,7 @@
       totalPrice += priceNum;
     });
     if (document.getElementById("total")) {
-      document.getElementById("total").innerText = "$" + totalPrice;
+      document.getElementById("total").innerText = "$" + totalPrice.toFixed(2);
     }
   }
 
@@ -206,13 +206,22 @@
       storage = [];
     }
     let totalQuantity = storage.length;
-    if (quantityCounter) {
+    if (quantityCounter && totalQuantity > 0) {
       quantityCounter.innerText = totalQuantity;
-      if (totalQuantity > 0) {
-        document
-          .getElementById("cart-counter")
-          .classList.add("header__cart-counter");
-      }
+      document
+        .getElementById("cart-counter")
+        .classList.add("header__cart-counter");
     }
+  }
+
+  // Clear cart and simulate checkout with an alert
+  const checkoutButton = document.getElementById("checkout");
+  if (checkoutButton) {
+    checkoutButton.addEventListener("click", checkout, false);
+  }
+  function checkout() {
+    alert("Congratulation! You checked out.");
+    localStorage.removeItem("cart");
+    window.location.href = "/";
   }
 })();
